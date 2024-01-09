@@ -26,7 +26,7 @@ class _ListPageState extends State<ListPage> {
   filteredItems.clear();
   filteredItems.addAll(api.list);
   filteredItems.refresh();
-  debugPrint('call data');
+  debugPrint('call data count: ${filteredItems.length}');
   }
 
 
@@ -76,7 +76,9 @@ class _ListPageState extends State<ListPage> {
                   labelText: 'Search',
                   hintText: 'Enter search term',
                   prefixIcon: Icon(Icons.search, color: Colors.blue[400],),
-                  suffixIcon: Icon(Icons.highlight_remove, color: Colors.blue[400],)
+                  suffix: Padding(
+                      padding: EdgeInsets.only(right: 10,left: 10,),
+                      child: Icon(Icons.highlight_remove, color: Colors.blue[400],))
                 ),
               ),
             ),
